@@ -1,195 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bintang Ridwan Pribadi | Backend Developer</title>
-  <link rel="icon" href="./img/general/logo.png" type="image/icon type">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bintang Ridwan Pribadi | Backend Developer</title>
+    <link rel="icon" type="image/png" href="/img/general/logo.png" />
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
-  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-  <link rel="stylesheet" href="./css/style.css">
-</head>
-<body>
-<!-- ===== Header / Navbar ===== -->
-<header id="navbar">
-  <div class="logo">
-    <div class="logo-box">B</div>
-  </div>
-
-  <ul class="navlist">
-    <li><a href="index.html" class="active">About</a></li>
-    <li><a href="pages/portofolio.html">Portfolio</a></li>
-    <li><a href="pages/certifications.html">Certifications</a></li>
-    <li><a href="pages/repository.html">Repositories</a></li>
-    <li><a href="pages/cv.html">CV</a></li>
-    <li><a href="pages/blog.html">Blog</a></li>
-  </ul>
-
-  <div class="header-btns">
-    <div class="search-trigger" id="search-btn">
-      <i class="ri-search-line"></i>
-      <span class="search-kb">/ K</span>
-    </div>
-    <div class="theme-toggle" id="theme-toggle">
-      <i class="ri-moon-line"></i>
-    </div>
-    <div class="bx bx-menu" id="menu-icon"></div>
-  </div>
-</header>
-
-<!-- ===== Search Modal ===== -->
-<div class="search-modal" id="search-modal">
-  <div class="search-box">
-    <input type="text" placeholder="Type to search...">
-    <ul>
-      <li><a href="pages/portofolio.html">Portfolio</a></li>
-      <li><a href="pages/cv.html">CV</a></li>
-      <li><a href="pages/certifications.html">Certifications</a></li>
-      <li><a href="pages/blog.html">Blog</a></li>
-      <li><a href="index.html">About</a></li>
-      <li><a href="pages/repository.html">Repositories</a></li>
-    </ul>
-  </div>
-</div>
-
-<!-- ===== Hero ===== -->
-<section class="hero" id="home">
-  <div class="hero-wrapper">
-    <div class="hero-text" data-aos="fade-right">
-      <div class="welcome-badge">Available for Projects</div>
-      <h1>I Build <span>Scalable & Robust</span> Backend Systems</h1>
-      <p>
-        I'm Bintang Ridwan Pribadi, a Software Engineering student and Backend Developer. I specialize in crafting efficient APIs, managing complex databases, and ensuring your application's server-side logic is seamless and secure.
-      </p>
-      <div class="hero-btns">
-        <a href="#contact" class="btn">Get In Touch</a>
-        <a href="pages/portofolio.html" class="view-work">Explore Work <i class="ri-arrow-right-up-line"></i></a>
-      </div>
-    </div>
-
-    <div class="hero-img" data-aos="zoom-in">
-      <div class="img-container">
-        <img src="./img/index/profile.jpeg" alt="Bintang Profil">
-        <div class="img-outline"></div>
-      </div>
-
-      <div class="social-float">
-        <p>Follow me on:</p>
-        <a href="https://www.facebook.com/bntngridp/"><i class="ri-facebook-fill"></i></a>
-        <a href="https://instagram.com/bntngridp" target="_blank"><i class="ri-instagram-line"></i></a>
-        <a href="https://github.com/bntngridp" target="_blank"><i class="ri-github-fill"></i></a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== Skills ===== -->
-<section class="services" id="services">
-  <div class="center-text" data-aos="fade-down">
-    <h2>Technical <span>Skills</span></h2>
-    <p style="color: var(--other-color); margin-top: 10px;">Core technologies powering my backend architecture</p>
-  </div>
-
-  <div class="skills-container" data-aos="fade-up">
-    <div class="skill-card-rect">
-      <div class="skill-icon"><i class="ri-code-box-line"></i></div>
-      <div class="skill-info">
-        <h4>PHP & Laravel</h4>
-        <p>Expert in RESTful APIs</p>
-      </div>
-    </div>
-
-    <div class="skill-card-rect">
-      <div class="skill-icon"><i class="ri-nodejs-line"></i></div>
-      <div class="skill-info">
-        <h4>Node JS</h4>
-        <p>Server-side JavaScript</p>
-      </div>
-    </div>
-
-    <div class="skill-card-rect">
-      <div class="skill-icon"><i class="ri-command-line"></i></div>
-      <div class="skill-info">
-        <h4>Golang</h4>
-        <p>High Performance Systems</p>
-      </div>
-    </div>
-
-    <div class="skill-card-rect">
-      <div class="skill-icon"><i class="ri-database-2-line"></i></div>
-      <div class="skill-info">
-        <h4>MySQL</h4>
-        <p>Database Optimization</p>
-      </div>
-    </div>
-
-    <div class="skill-card-rect">
-      <div class="skill-icon"><i class="ri-html5-line"></i></div>
-      <div class="skill-info">
-        <h4>HTML & CSS</h4>
-        <p>Web Foundation</p>
-      </div>
-    </div>
-
-    <div class="skill-card-rect">
-      <div class="skill-icon"><i class="ri-braces-line"></i></div>
-      <div class="skill-info">
-        <h4>JavaScript</h4>
-        <p>Dynamic Interactivity</p>
-      </div>
-    </div>
-
-    <div class="skill-card-rect">
-      <div class="skill-icon"><i class="ri-git-branch-line"></i></div>
-      <div class="skill-info">
-        <h4>Git & GitHub</h4>
-        <p>Version Control Expert</p>
-      </div>
-    </div>
-
-    <div class="skill-card-rect">
-      <div class="skill-icon"><i class="ri-terminal-box-line"></i></div>
-      <div class="skill-info">
-        <h4>Postman</h4>
-        <p>API Testing & Docs</p>
-      </div>
-    </div>
-  </div>
-</section>
-<div class="section-divider" data-aos="fade-up"></div>
-
-<!-- ===== Contact ===== -->
-<section class="contact" id="contact">
-  <div class="contact-container" data-aos="fade-right">
-    <h2>Contact</h2>
-    <p>I'm currently looking to join a cross-functional team that values improving people's lives through accessible backend systems. Or have a project in mind? Let's connect.</p>
-
-    <a href="bintangridwan30@gmail.com" class="contact-email">bintangridwan30@gmail.com</a>
-
-    <div class="social-links-minimal">
-      <a href="https://instagram.com/bntngridp" target="_blank"><i class="ri-instagram-line"></i></a>
-      <a href="https://github.com/bntngridp" target="_blank"><i class="ri-github-fill"></i></a>
-      <a href="https://www.linkedin.com/in/bntngridp/" target="_blank"><i class="ri-linkedin-box-fill"></i></a>
-      <a href="https://x.com/bntngridp" target="_blank" title="X (Twitter)"> <i class="ri-twitter-x-line"></i></a>
-      <a href="https://www.facebook.com/bntngridp/" target="_blank" title="Facebook"> <i class="ri-facebook-box-fill"></i></a>
-      <a href="https://medium.com/@bntngridp" target="_blank" title="Medium"> <i class="ri-medium-line"></i></a>
-      <a href="mailto:bintangridwan30@gmail.com" title="Send Email"><i class="ri-mail-line"></i></a>
-    </div>
-  </div>
-</section>
-
-<!-- ===== Footer ===== -->
-<footer class="footer">
-  <p>© 2026 Bintang Ridwan Pribadi. Built with Passion & Clean Code.</p>
-</footer>
-
-<!-- ===== Scripts ===== -->
-<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script>
-  AOS.init({ offset: 100, duration: 1000, once: true });
-</script>
-<script src="./js/script.js"></script>
-</body>
+    <!-- Icon Library CDN -->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
