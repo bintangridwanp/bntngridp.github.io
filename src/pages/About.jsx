@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import Lanyard from '../components/Lanyard';
 
 function About() {
   return (
@@ -7,10 +8,9 @@ function About() {
       <section className="hero" id="home">
         <div className="hero-wrapper">
           <div className="hero-text" data-aos="fade-right">
-            <div className="welcome-badge">Available for Projects</div>
-            <h1>I Build <span>Scalable & Robust</span> Backend Systems</h1>
+            <h1>I Build <span>Scalable & Robust</span> Fullstack Web Apps</h1>
             <p>
-              I'm Bintang Ridwan Pribadi, a Software Engineering student and Backend Developer. I specialize in crafting efficient APIs, managing complex databases, and ensuring your application's server-side logic is seamless and secure.
+              I'm Bintang Ridwan Pribadi, a Software Engineering student and Fullstack Developer. I specialize in building complete, end-to-end web applications—from designing responsive user interfaces to crafting robust backend APIs and managing optimized databases.
             </p>
             <div className="hero-btns">
               <a href="#contact" className="btn">Get In Touch</a>
@@ -21,23 +21,14 @@ function About() {
           </div>
 
           <div className="hero-img" data-aos="zoom-in">
-            <div className="img-container">
-              <img src="/img/index/profile.jpeg" alt="Bintang Profil" />
-              <div className="img-outline"></div>
-            </div>
-
-            <div className="social-float">
-              <p>Follow me on:</p>
-              <a href="https://www.facebook.com/bntngridp/" target="_blank" rel="noopener noreferrer">
-                <i className="ri-facebook-fill"></i>
-              </a>
-              <a href="https://instagram.com/bntngridp" target="_blank" rel="noopener noreferrer">
-                <i className="ri-instagram-line"></i>
-              </a>
-              <a href="https://github.com/bntngridp" target="_blank" rel="noopener noreferrer">
-                <i className="ri-github-fill"></i>
-              </a>
-            </div>
+            <Lanyard
+              position={[0, 0, 20]}
+              gravity={[0, -40, 0]}
+              fov={16}
+              frontImage="/img/index/profile.jpeg"
+              backImage="/img/general/logo.png"
+              imageFit="cover"
+            />
           </div>
         </div>
       </section>
