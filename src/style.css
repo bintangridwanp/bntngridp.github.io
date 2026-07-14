@@ -40,21 +40,38 @@ body {
 /* ===== Header / Navbar ===== */
 header {
   position: fixed;
-  width: 100%;
-  top: 0;
-  right: 0;
+  width: 90%;
+  max-width: 1200px;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 1000;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 30px 10%;
-  background: transparent;
-  transition: all 0.4s ease;
+  padding: 12px 24px;
+  background: rgba(26, 15, 15, 0.7);
+  border: 1px solid rgba(255, 51, 51, 0.1);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
 }
 header.sticky {
-  background: var(--bg-color);
-  padding: 15px 10%;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  background: rgba(26, 15, 15, 0.85);
+  border-color: rgba(255, 51, 51, 0.18);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.55);
+}
+body.light-mode header {
+  background: rgba(245, 247, 250, 0.8);
+  border-color: rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 30px rgba(31, 41, 55, 0.06);
+}
+body.light-mode header.sticky {
+  background: rgba(245, 247, 250, 0.92);
+  border-color: rgba(0, 0, 0, 0.12);
+  box-shadow: 0 12px 40px rgba(31, 41, 55, 0.1);
 }
 .logo {
   display: flex;
@@ -63,6 +80,7 @@ header.sticky {
   font-size: 24px;
   font-weight: 700;
   color: var(--text-color);
+  cursor: pointer;
 }
 .logo-box {
   background: var(--main-color);
@@ -74,38 +92,78 @@ header.sticky {
   align-items: center;
   justify-content: center;
   font-size: 22px;
+  font-weight: 800;
 }
 .navlist {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
 }
 .navlist a {
-  font-size: var(--p-font);
+  font-size: 0.95rem;
   font-weight: 500;
   color: var(--text-color);
-  margin: 0 18px;
-  transition: 0.3s;
+  padding: 8px 16px;
+  border-radius: 10px;
+  transition: all 0.25s ease;
+  margin: 0;
+  white-space: nowrap;
 }
-.navlist a:hover,
+.navlist a:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--main-color);
+}
+body.light-mode .navlist a:hover {
+  background: rgba(0, 0, 0, 0.04);
+}
 .navlist a.active {
   color: var(--main-color);
+  font-weight: 600;
+  background: rgba(139, 0, 0, 0.1);
+}
+body.light-mode .navlist a.active {
+  background: rgba(139, 0, 0, 0.05);
 }
 .header-btns {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 16px;
 }
-.h-btn {
-  padding: 10px 22px;
-  border-radius: 8px;
-  border: 1.5px solid var(--main-color);
+.contact-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 18px;
+  border-radius: 10px;
+  border: 1.2px solid var(--text-color);
   color: var(--text-color);
   font-size: 0.9rem;
-  font-weight: 500;
+  font-weight: 600;
   background: transparent;
-  transition: 0.3s;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+  cursor: pointer;
 }
-.h-btn:hover {
-  background: var(--main-color);
+.contact-btn i {
+  font-size: 1.1rem;
+  transition: transform 0.25s ease;
+}
+.contact-btn:hover {
+  background: var(--text-color);
+  color: var(--bg-color);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.contact-btn:hover i {
+  transform: translate(2px, -2px);
+}
+body.light-mode .contact-btn {
+  border-color: rgba(0, 0, 0, 0.85);
+  color: rgba(0, 0, 0, 0.85);
+}
+body.light-mode .contact-btn:hover {
+  background: rgba(0, 0, 0, 0.9);
   color: #ffffff;
 }
 .theme-toggle {
@@ -147,8 +205,9 @@ section {
 
 
 .hero-wrapper {
+  position: relative;
   display: grid;
-  grid-template-columns: 1.2fr 1fr;
+  grid-template-columns: 1fr 1.2fr;
   align-items: center;
   gap: 40px;
 }
@@ -203,11 +262,19 @@ section {
   gap: 8px;
 }
 
+.hero-text {
+  position: relative;
+  z-index: 10;
+  pointer-events: auto;
+}
+
 /* hero image side */
 .hero-img {
   position: relative;
   display: flex;
   justify-content: center;
+  min-height: 500px;
+  pointer-events: none;
 }
 .img-container {
   position: relative;
@@ -1135,7 +1202,7 @@ section {
 /* navbar */
 header,
 header.sticky {
-  padding-inline: clamp(16px, 4vw, 10%);
+  padding-inline: clamp(12px, 3vw, 24px);
 }
 
 .logo {
@@ -1149,7 +1216,7 @@ header.sticky {
 }
 
 .navlist a {
-  margin: 0 14px;
+  margin: 0;
   white-space: nowrap;
 }
 
@@ -1394,22 +1461,36 @@ header.sticky {
     margin-left: auto;
   }
 
+  .hero-img {
+    min-height: 450px;
+  }
+
   .navlist {
     position: fixed;
-    top: 76px;
+    top: 86px;
     right: -100%;
-    width: min(86vw, 320px);
-    height: calc(100vh - 76px);
-    background: var(--second-bg-color);
+    width: min(86vw, 300px);
+    height: calc(100vh - 110px);
+    background: rgba(26, 15, 15, 0.92);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
     flex-direction: column;
     padding: 26px 20px;
     transition: 0.35s ease;
     overflow-y: auto;
-    border-left: 1px solid rgba(255, 51, 51, 0.12);
+    border: 1px solid rgba(255, 51, 51, 0.12);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  }
+
+  body.light-mode .navlist {
+    background: rgba(245, 247, 250, 0.95);
+    border-color: rgba(0, 0, 0, 0.08);
+    box-shadow: 0 10px 30px rgba(31, 41, 55, 0.1);
   }
 
   .navlist.active {
-    right: 0;
+    right: 20px;
   }
 
   .navlist a {
@@ -1430,6 +1511,12 @@ header.sticky {
 
   .modal-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-btn {
+    display: none;
   }
 }
 

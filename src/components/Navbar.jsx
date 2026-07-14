@@ -1,10 +1,13 @@
 import { useState, useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 
 function Navbar({ onSearchOpen }) {
   const [isSticky, setIsSticky] = useState(false);
   const [isLightMode, setIsLightMode] = useState(() => document.body.classList.contains("light-mode"));
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const location = useLocation();
+  const navigate = useNavigate();
 
   // Deteksi scroll untuk sticky header
   useEffect(() => {
@@ -39,6 +42,27 @@ function Navbar({ onSearchOpen }) {
 
   const closeMobileMenu = () => {
     setIsMobileMenuOpen(false);
+  };
+
+  // Navigasi cerdas untuk tombol Contact Me
+  const handleContactClick = (e) => {
+    closeMobileMenu();
+    if (location.pathname !== '/') {
+      e.preventDefault();
+      navigate('/');
+      setTimeout(() => {
+        const contactSec = document.getElementById('contact');
+        if (contactSec) {
+          contactSec.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      e.preventDefault();
+      const contactSec = document.getElementById('contact');
+      if (contactSec) {
+        contactSec.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
   };
 
   return (
@@ -88,6 +112,9 @@ function Navbar({ onSearchOpen }) {
         <div className="theme-toggle" id="theme-toggle" onClick={toggleTheme}>
           <i className={isLightMode ? 'ri-sun-line' : 'ri-moon-line'}></i>
         </div>
+        <a href="#contact" className="contact-btn" onClick={handleContactClick}>
+          Contact Me <i className="ri-arrow-right-up-line"></i>
+        </a>
         <div className={`bx bx-menu ${isMobileMenuOpen ? 'bx-x' : ''}`} id="menu-icon" onClick={toggleMobileMenu}></div>
       </div>
     </header>

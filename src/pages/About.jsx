@@ -7,7 +7,21 @@ function About() {
       {/* ===== Hero Section ===== */}
       <section className="hero" id="home">
         <div className="hero-wrapper">
-          <div className="hero-text" data-aos="fade-right">
+          <Lanyard
+            position={[0, 0.8, 20]}
+            gravity={[0, -40, 0]}
+            fov={15.5}
+            anchorPosition={[-3.6, 4.6, 0]}
+            frontImage="/img/index/profile.jpeg"
+            backImage="/img/general/logo.png"
+            imageFit="cover"
+          />
+
+          <div className="hero-img" data-aos="fade-right">
+            {/* Kolom penahan ruang kosong Lanyard di sisi kiri */}
+          </div>
+
+          <div className="hero-text" data-aos="fade-left">
             <h1>I Build <span>Scalable & Robust</span> Fullstack Web Apps</h1>
             <p>
               I'm Bintang Ridwan Pribadi, a Software Engineering student and Fullstack Developer. I specialize in building complete, end-to-end web applications—from designing responsive user interfaces to crafting robust backend APIs and managing optimized databases.
@@ -18,17 +32,6 @@ function About() {
                 Explore Work <i className="ri-arrow-right-up-line"></i>
               </Link>
             </div>
-          </div>
-
-          <div className="hero-img" data-aos="zoom-in">
-            <Lanyard
-              position={[0, 0, 20]}
-              gravity={[0, -40, 0]}
-              fov={16}
-              frontImage="/img/index/profile.jpeg"
-              backImage="/img/general/logo.png"
-              imageFit="cover"
-            />
           </div>
         </div>
       </section>
